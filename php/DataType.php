@@ -41,7 +41,7 @@
         protected $value;
 
         //Abstract Public Methods
-        //Forces overrides in child classes.
+        //Forces overrides in child classes
         abstract public function getValue();
         abstract public function setValue();
 

@@ -37,7 +37,7 @@
         /**
          * Getter for $value
          * @return bool | null primitive value of this Boolean, or null if not
-         *                     set or not a boolean.
+         *                     set or not a boolean
          */
         public function getValue() {
 
@@ -56,7 +56,7 @@
         /**
          * Setter for $value
          * Checks $valueNew is a boolean, is set and not null
-         * @param bool $valueNew new primitive value for this Boolean.
+         * @param bool $valueNew new primitive value for this Boolean
          */
         public function setValue(bool $valueNew) {
 
