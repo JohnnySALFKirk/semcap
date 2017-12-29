@@ -2,7 +2,7 @@
 
 /*****************************************************************************
  *                                                                           *
- * DataType.php                                                              *
+ * Boolean.php                                                               *
  * Copyright © 2017 Johnny Kirk.                                             *
  *                                                                           *
  * This file is part of semcap.                                              *
@@ -23,35 +23,52 @@
  *****************************************************************************/
 
     /**
-     * Wrapper for basic data types
+     * Wrapper for boolean data types.
      * @author    Johnny Kirk <johnnykirk@outlook.com>
      * @copyright Copyright © 2017 Johnny Kirk
      * @license   https://www.gnu.org/licenses/gpl-3.0.en.html GNU General
      *            Public License
-     * @see       http://schema.org/DataType
+     * @see       http://schema.org/Boolean
      * @since     0.1.0
      * @version   0.1.0
      */
-    abstract class DataType {
+    class Boolean extends DataType {
 
-        //Concrete Protected Properties
         /**
-         * @var bool primitive value of this Boolean
+         * Getter for $value
+         * @return bool | null primitive value of this Boolean, or null if not
+         *                     set or not a boolean.
          */
-        protected $value;
+        public function getValue() {
 
-        //Abstract Public Methods
-        //Forces overrides in child classes.
-        abstract public function getValue();
-        abstract public function setValue();
+            if(is_bool($this->value) && isset($this->value)) {
 
-        //Concrete Public Methods
+                return $this->value;
+
+            } else {
+
+                return null;
+
+            }
+
+        }
+
         /**
-         * Printer for $value
+         * Setter for $value
+         * Checks $valueNew is a boolean, is set and not null
+         * @param bool $valueNew new primitive value for this Boolean.
          */
-        public function printValue() {
+        public function setValue(bool $valueNew) {
 
-            print $this->getValue();
+            if(is_bool($valueNew) && isset($valueNew)) {
+
+                $this->value = $valueNew;
+
+            } else {
+
+                throw new InvalidArgumentException('Boolean expected.');
+
+            }
 
         }
 
