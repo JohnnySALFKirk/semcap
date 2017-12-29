@@ -22,13 +22,23 @@
  *                                                                           *
  *****************************************************************************/
 
+    /**
+     * Wrapper for basic data types
+     * @author    Johnny Kirk <johnnykirk@outlook.com>
+     * @copyright Copyright © 2017 Johnny Kirk
+     * @license   https://www.gnu.org/licenses/gpl-3.0.en.html GNU General
+     *            Public License
+     * @see       http://schema.org/DataType
+     * @since     0.1.0
+     * @version   0.1.0
+     */
     abstract class DataType {
 
-        //Abstract Protected Method Declarations
+        //Abstract Protected Methods
         abstract protected function getValue();
         abstract protected function setValue();
 
-        //Concrete Public Method Declarations
+        //Concrete Public Methods
         public function printValue() {
 
             print $this->getValue();
