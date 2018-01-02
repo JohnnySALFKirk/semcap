@@ -3,7 +3,7 @@
 /*****************************************************************************
  *                                                                           *
  * DataType.php                                                              *
- * Copyright © 2017 Johnny Kirk.                                             *
+ * Copyright © 2017-2018 Johnny Kirk.                                        *
  *                                                                           *
  * This file is part of semcap.                                              *
  *                                                                           *
@@ -25,33 +25,56 @@
     /**
      * Wrapper for basic data types
      * @author    Johnny Kirk <johnnykirk@outlook.com>
-     * @copyright Copyright © 2017 Johnny Kirk
+     * @copyright Copyright © 2017-2018 Johnny Kirk
      * @license   https://www.gnu.org/licenses/gpl-3.0.en.html GNU General
      *            Public License
      * @see       http://schema.org/DataType
      * @since     0.1.0
      * @version   0.1.0
      */
-    abstract class DataType {
+    class DataType {
 
-        //Concrete Protected Properties
+        //Protected Properties
         /**
-         * @var bool primitive value of this Boolean
+         * @var mixed primitive value of this DataType
          */
         protected $value;
 
-        //Abstract Public Methods
-        //Forces overrides in child classes
-        abstract public function getValue();
-        abstract public function setValue();
-
-        //Concrete Public Methods
+        //Public Methods
         /**
-         * Printer for $value
+         * Getter for $value
+         * @return mixed primitive value of this DataType
          */
-        public function printValue() {
+        public function getValue() {
 
-            print $this->getValue();
+            if(isset($this->value)) {
+
+                return $this->value;
+
+            } else {
+
+                return null;
+
+            }
+
+        }
+
+        /**
+         * Setter for $value
+         * Checks $valueNew is set and not null
+         * @param bool $valueNew new primitive value for this DataType
+         */
+        public function setValue($valueNew) {
+
+            if(isset($valueNew)) {
+
+                $this->value = $valueNew;
+
+            } else {
+
+                throw new InvalidArgumentException('Mixed value expected.');
+
+            }
 
         }
 

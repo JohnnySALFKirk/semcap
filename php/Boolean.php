@@ -3,7 +3,7 @@
 /*****************************************************************************
  *                                                                           *
  * Boolean.php                                                               *
- * Copyright © 2017 Johnny Kirk.                                             *
+ * Copyright © 2017-2018 Johnny Kirk.                                        *
  *                                                                           *
  * This file is part of semcap.                                              *
  *                                                                           *
@@ -25,7 +25,7 @@
     /**
      * Wrapper for boolean data types.
      * @author    Johnny Kirk <johnnykirk@outlook.com>
-     * @copyright Copyright © 2017 Johnny Kirk
+     * @copyright Copyright © 2017-2018 Johnny Kirk
      * @license   https://www.gnu.org/licenses/gpl-3.0.en.html GNU General
      *            Public License
      * @see       http://schema.org/Boolean
